@@ -1,11 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { createTask } from '../../redux/tasks/operations';
-import { formatDateString } from '../../utils/dateFormatForButton';
-
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-
+import Notiflix from 'notiflix';
+import { createTask } from '../../redux/tasks/operations';
+import { formatDateString } from '../../utils/dateFormatForButton';
 import {
   Form,
   FormContainer,
@@ -36,6 +35,7 @@ export const TaskCreator = () => {
 
     try {
       dispatch(createTask({ taskName, startDate, finishDate }));
+      Notiflix.Notify.success('Task has created');
     } catch (error) {}
   };
 

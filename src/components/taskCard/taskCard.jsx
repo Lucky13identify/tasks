@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { deleteTask, updateTask } from '../../redux/tasks/operations';
 import { useState } from 'react';
-import { formatBackendDate } from '../../utils/dateFormat';
-import { formatDateString } from '../../utils/dateFormatForButton';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import Notiflix from 'notiflix';
+import { deleteTask, updateTask } from '../../redux/tasks/operations';
+import { formatDateString } from '../../utils/dateFormatForButton';
 import {
   Input,
   ContainerButton,
@@ -20,6 +20,7 @@ export const TaskCard = ({ task }) => {
   const [finishDate, setFinishDate] = useState(task.finishDate);
   const [isButtonStartOpen, setIsButtonStartOpen] = useState(false);
   const [isButtonFinishOpen, setIsButtonFinishOpen] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -28,6 +29,7 @@ export const TaskCard = ({ task }) => {
 
   const onDelete = id => {
     dispatch(deleteTask(id));
+    Notiflix.Notify.warning('Task has deleted');
   };
 
   const editTask = e => {
@@ -39,6 +41,7 @@ export const TaskCard = ({ task }) => {
           updatedData: { taskName: inputValue, startDate, finishDate },
         })
       );
+      Notiflix.Notify.success('Task has updated');
     } catch (error) {
       throw error;
     }

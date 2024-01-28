@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const FormContainer = styled.div`
   width: 40%;
   margin-top: 20px;
+  padding: 20px;
   border: 2px solid #800080;
   background-color: purple;
   border-radius: 10px;
-  padding: 20px;
 `;
 
 export const Form = styled.form`
@@ -29,9 +29,9 @@ export const ContainerButton = styled.div`
 
 export const Button = styled.button`
   width: 90px;
-  /* height: 100%; */
   border: none;
   border-radius: 6px;
+
   text-decoration: none;
   color: white;
   background: #0b63f6;
@@ -48,12 +48,12 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  border: none;
   height: 30px;
+  border: none;
   border-radius: 4px;
 `;
 
 export const ButtonText = styled.p`
-  color: white;
   margin-bottom: 10px;
+  color: white;
 `;

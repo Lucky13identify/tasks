@@ -4,10 +4,10 @@ export const Form = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #800080;
-  border-radius: 10px;
   padding: 15px;
   width: 800px;
+  border: 2px solid #800080;
+  border-radius: 10px;
 `;
 
 export const ContainerButton = styled.div`
@@ -24,6 +24,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 6px;
   text-decoration: none;
+
   color: white;
   background: #0b63f6;
   box-shadow: 0 3px 0 #003cc5;
@@ -39,13 +40,13 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  border: none;
   width: 400px;
-  border-radius: 4px;
   margin-top: 7px;
+  border: none;
+  border-radius: 4px;
 `;
 
 export const ButtonText = styled.p`
-  color: white;
   margin-bottom: 10px;
+  color: white;
 `;

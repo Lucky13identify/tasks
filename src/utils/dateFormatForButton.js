@@ -1,5 +1,5 @@
-export function formatDateString(inputDateString) {
-  const inputDate = new Date(inputDateString);
+export function formatDateString(date) {
+  const inputDate = new Date(date);
 
   const day = inputDate.getDate().toString().padStart(2, '0');
   const month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
